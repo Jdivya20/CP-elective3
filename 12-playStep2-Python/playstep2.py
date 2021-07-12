@@ -35,4 +35,31 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-	pass
+	s=''
+	if len(str(hand)) == len(set(str(hand))):
+		while len(str(dice))>2:
+			d=dice%10
+			s=s+str(d)
+			dice=dice//10
+			hand=hand//10
+			s1=str(hand)+s
+			s3= "".join(sorted(s1, reverse=True))
+		return(int(s3),dice)
+	elif len(str(hand)) != len(set(str(hand))) and len(str(dice))<=2:
+			d=dice%10
+			s=s+str(d)
+			dice=dice//10
+			h=str(hand)
+			h1=h[1::]+s
+			# r=hand%10
+			h2= "".join(sorted(h1, reverse=True))
+			return(int(h2),dice)
+	elif len(str(hand)) != len(set(str(hand))) and len(str(dice))>2:
+			d=dice%10
+			s=s+str(d)
+			dice=dice//10
+			h=str(hand)
+			h1=h[1::]+s
+			# r=hand%10
+			h2= "".join(sorted(h1, reverse=True))
+			return(int(h2),dice)
