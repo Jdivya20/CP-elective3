@@ -7,5 +7,22 @@
 
 
 def fun_set_kth_digit(n, k, d):
-		return 0
+	n1=abs(n)
+	a=[]
+	s=''
+	for i in str(n1):
+		a.append(int(i))
+	a.reverse()
+	if k>=len(a):
+		a.append(d)
+	else:
+		a[k]=d
+	# print(reversed(a))
+	for i in a[::-1]:
+		s=s+str(i)
+	b=int(s)
+	if n<0:
+		return(-abs(b))
+	else:
+		return(b)
 
