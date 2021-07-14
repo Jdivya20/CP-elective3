@@ -11,8 +11,14 @@
 # return 0.
 
 def powerSum(n, k):
+    s=0
     # Your code goes here...
-    return 0
+    if n<0 or k<0:
+        return 0
+    else:
+        for i in range(1,n+1):
+            s=s+i**k
+        return s
 
 # Write your own test cases here...
 
