@@ -10,15 +10,19 @@
 # If n is negative, return 0. Similarly, if k is negative, 
 # return 0.
 
-def powerSum(n, k):
-    s=0
-    # Your code goes here...
-    if n<0 or k<0:
-        return 0
-    else:
-        for i in range(1,n+1):
-            s=s+i**k
-        return s
+# def powerSum(n, k):
+#     s=0
+#     # Your code goes here...
+#     if n<0 or k<0:
+#         return 0
+#     else:
+#         for i in range(1,n+1):
+#             s=s+i**k
+#         return s
+def powerSum(n,k):
+    if n<=0 or n<=0: return 0
+    return n**k + powerSum(n-1,k)
+print(powerSum(5,2))
 
 # Write your own test cases here...
 
