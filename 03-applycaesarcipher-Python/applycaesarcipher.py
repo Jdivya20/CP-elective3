@@ -11,7 +11,16 @@
 
 
 def fun_applycaesarcipher(msg, shift):
-	return ""
+	cmsg=""
+	for i in range(len(msg)):
+		c=msg[i]
+		if c.isspace():
+			cmsg+=" "
+		elif c.islower():
+			cmsg+=chr((ord(c)+shift-97)%26+97)
+		else:
+			cmsg+=chr((ord(c)+shift-65)%26+65)
+	return cmsg
 
 
 
