@@ -17,12 +17,12 @@ class LinkedList(object):
         
     def append(self, new_element):
         current = self.head
-        if self.head:
+        if current:
             while True:
                 current = current.next
             current.next = new_element
         else:
-            self.head = new_element
+            current = new_element
 
     def insert_first(self, new_element):
         "Insert new element as the head of the LinkedList"
@@ -32,10 +32,9 @@ class LinkedList(object):
     def delete_first(self):
         "Delete the first (head) element in the LinkedList as return it"
         if self.head:
-            deleted_element = self.head
-            temp = deleted_element.next
-            self.head = temp
-            return deleted_element
+            deleted_ele = self.head
+            self.head=deleted_ele.next
+            return deleted_ele
         else:
             return None
 
