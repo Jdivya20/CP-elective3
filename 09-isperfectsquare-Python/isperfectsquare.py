@@ -5,4 +5,9 @@
 
 def isperfectsquare(n):
 	# your code goes here
-	pass
+	n=str(n)
+	if n.isdigit():
+		for i in range(1,int(n)):
+			if i**2==int(n):
+				return True
+	return False
