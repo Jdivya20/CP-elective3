@@ -23,6 +23,18 @@
 
 def removeRowAndCol(L, row, col):
     # Your code goes here...
-    pass
+    L=L[:row]+L[row+1:]
 
+    for j in L:
+        j.pop(col)
+    return(L)
+#     assert (removeRowAndCol([ [ 2, 3, 4, 5],
+# [ 8, 7, 6, 5],
+# [ 0, 1, 2, 3] ], 2, 2))) == [[2, 3, 5], [8, 7, 5]]
+print(removeRowAndCol([ [ 2, 3, 4, 5],
+[ 8, 7, 6, 5],
+[ 0, 1, 2, 3] ], 2, 2))
 # Write your own test cases.
+# assert (removeRowAndCol([ [ 2, 3, 4, 5],
+# [ 8, 7, 6, 5],
+# [ 0, 1, 2, 3] ], 2, 2))) == [[2, 3, 5], [8, 7, 5]]
