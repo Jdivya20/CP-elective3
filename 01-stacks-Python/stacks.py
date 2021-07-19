@@ -37,6 +37,11 @@ class LinkedList(object):
             return deleted_ele
         else:
             return None
+    def display(self):
+        current=self.head
+        while current!=None:
+            print(current.value)
+            current=current.next
 
 class stack(object):
     def __init__(self,top=None):
@@ -49,4 +54,17 @@ class stack(object):
     def pop(self):
         "Pop (remove) the first element off the top of the stack and return it"
         return self.ll.delete_first()
-    
+    def display(self):
+        return self.ll.display()
+s=stack()
+e1=Element(1)
+e2=Element(2)
+e3=Element(3)
+e4=Element(4)
+e5=Element(5)
+s.push(e1)
+s.push(e2)
+s.push(e3)
+s.push(e4)
+s.push(e5)
+s.display()
