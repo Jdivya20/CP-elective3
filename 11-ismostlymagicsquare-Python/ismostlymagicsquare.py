@@ -12,7 +12,39 @@
 # [ [ 1, 2],
 #   [ 2, 1]]
 # Each row and each column add to 3, but one diagonal adds to 2 and the other to 4.
-
+def coladd(a):
+	row=len(a)
+	col=len(a[0])
+	b=[]
+	for i in range(row):
+		s=0
+		for j in range(col):
+			s+=a[j][i]
+		b.append(s)
+	return b
+    # c=sum(b)
+    # print(b)
+def isdiag(a):
+    row=len(a)
+    col=len(a[0])
+    b=[]
+    s=0
+    for i in range(row):
+        
+        for j in range(col):
+            if i==j:
+                s+=a[i][j]
+                b.append(s)
+        return b
+print(coladd([[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12],[4, 15, 14, 1]]))
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	b=[]
+	for j in a:
+		b.append(sum(j))
+	for i in b:
+		if b.count(i)==len(b) and coladd(a)==b and isdiag(a):
+			return True
+		else:
+			return False
+print(ismostlymagicsquare([[16, 3, 2, 13], [5, 10, 11, 8], [9, 6, 7, 12],[4, 15, 14, 1]]))
