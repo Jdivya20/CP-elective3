@@ -11,4 +11,26 @@
 
 def lookandsay(a):
 	# Your code goes here
-	pass
+	# d={}
+	# b=[]
+	# for i in a:
+	# 	if i in d:
+	# 		d[i]=d[i]+1
+	# 	else:
+	# 		d[i]=1
+	# for each in d.items():
+	# 	b.append(each[::-1])
+	# return b
+	count=0
+	x=0
+	temp=[]
+	for i in a:
+		if i==x:
+			count+=1
+		else:
+			temp.append((count,x))
+			x=i
+			count=1
+	temp.append((count,x))
+	return temp[1:]
+print(lookandsay([1,1,1]))
