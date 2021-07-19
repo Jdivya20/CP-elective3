@@ -36,5 +36,11 @@ class HashTable(object):
         return hashvalue
         
 # obj=HashTable()
-# print(obj.calculate_hash_value('UDACITY'))
-
+# print(obj.calculate_hash_value('AA'))
+# print(obj.lookup('AA'))
+# print(obj.store('AA'))
+# print(obj.lookup('AA'))
+# print(obj.calculate_hash_value('AB'))
+# print(obj.lookup('AB'))
+# print(obj.store('AB'))
+# print(obj.lookup('AB'))
