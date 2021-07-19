@@ -38,7 +38,66 @@
 # assert(bonusPlayThreeDiceYahtzee(2333413) == (333, 29))
 # assert(bonusPlayThreeDiceYahtzee(2333555) == (555, 35))
 
+def playstep2(hand, dice):
+	# your code goes here
+	s=''
+	if len(str(hand)) != len(set(str(hand))) and len(str(dice))<=2 or len(str(hand)) != len(set(str(hand))) and len(str(dice))>2 :
+		d=dice%10
+		s=s+str(d)
+		dice=dice//10
+		h=str(hand)
+		h1=h[1::]+s
+		# r=hand%10
+		if int(h)>int(h1):
+			for i in list(h):
+				if h.count(i)==len(h):
+					return(int(h),dice)
+				else:
+					h2= "".join(sorted(h1, reverse=True))
+					return(int(h2),dice)
+	# if len(str(hand)) == len(set(str(hand))):
 
+	if len(str(hand)) == len(set(str(hand))) and len(str(dice))<=2:
+		while len(str(dice))<=2 and int(dice)>0:
+			d=dice%10
+			s=s+str(d)
+			dice=dice//10
+			hand=hand//10
+			s1=str(hand)+s
+			s3= "".join(sorted(s1, reverse=True))
+		return(int(s3),dice)
+	if len(str(hand)) == len(set(str(hand))) and len(str(dice))>2:
+		while len(str(dice))>2:
+		# if len(str(hand)) == len(set(str(hand))):
+			d=dice%10
+			s=s+str(d)
+			dice=dice//10
+			hand=hand//10
+			s1=str(hand)+s
+			s3= "".join(sorted(s1, reverse=True))
+		return(int(s3),dice)
 def bonusplaythreediceyahtzee(dice):
-	# Your code goes here
-	pass
+    # Your code goes here
+    d=str(dice)
+    c=[]
+    h=d[-3:]
+    h=int(h)
+    d=d[:-3]
+    d=int(d)
+    a=playstep2(h, d)
+    b=playstep2(a[0], a[1])
+    b=b[0]
+    # print(list(b))
+    for i in str(b):
+        c.append(int(i))
+    count=1
+    for j in range(len(c)-1):
+        if c[j]==c[j+1]:
+            count+=1
+    if count==1:
+        return (b,c[0])
+    elif count==2:
+        return (b,10+count*c[1])
+    elif count==3:
+        return (b,20+count*c[1])
+print(bonusplaythreediceyahtzee(2333555))
