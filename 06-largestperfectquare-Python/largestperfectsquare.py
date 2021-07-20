@@ -9,4 +9,8 @@
 
 def largestperfectsquare(n):
 	# your code goes here
-	pass
+	a=[]
+	for i in range(n):
+		if i**2<=n:
+			a.append(i**2)
+	return max(a)
