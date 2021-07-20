@@ -14,3 +14,4 @@ def largestperfectsquare(n):
 		if i**2<=n:
 			a.append(i**2)
 	return max(a)
+print(largestperfectsquare(24))
