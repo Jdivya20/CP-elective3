@@ -5,7 +5,14 @@
 
 
 
-def fun_alternatingsum(a): 
-	return 0
+def fun_alternatingsum(a):
+    even=[]
+    odd=[]
+    even=a[::2]
+    for i in range(len(a)):
+        if i%2!=0:
+            odd.append(a[i])
+    return sum(even)-sum(odd)
+print(fun_alternatingsum([]))
 
 
