@@ -5,8 +5,23 @@
 
 
 def fun_matrixmultiply(m1, m2):
-    return None
-
+    row=len(m1)
+    col=len(m2[0])
+    result=[]
+    for x in range(row):
+        result+=[[0]*col]
+    if len(m1[0])!=len(m2):
+        return None
+    for i in range(row):
+        for j in range(col):
+            for k in range(len(m2)):
+                result[i][j]+=m1[i][k]*m2[k][j]
+    return result
+print(fun_matrixmultiply([[5, 8, 1, 2],
+    [6, 7, 3, 0],
+    [4, 5, 9, 1]], [[12, 7, 3],
+    [4, 5, 6],
+    [7, 8, 9]]))
 
 
 
