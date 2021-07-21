@@ -19,4 +19,21 @@
 
 def ishappynumber(n):
 	# your code goes here
-	pass
+	a=[]
+	if n<=0:
+		return False
+	else:
+		if n<10:
+			n=n**2
+			if n==4:
+				return False
+		while n>1:
+			if n==4:
+				return False
+			n=str(n)
+			for i in n:
+				a.append(int(i)**2)
+			n=sum(a)
+			a=[]
+		return True
+print(ishappynumber(98))
