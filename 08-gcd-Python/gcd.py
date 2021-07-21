@@ -10,4 +10,9 @@
 
 def gcd(m, n):
 	# your code goes here
-	pass
+	while n>0:
+		gcd=m%n
+		m=n
+		n=gcd
+	return m
+print(gcd(270, 250))
