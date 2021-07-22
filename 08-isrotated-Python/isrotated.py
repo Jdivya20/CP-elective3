@@ -6,4 +6,14 @@
 
 def isrotated(str1, str2):
 	#Your code goes here
-	pass
+	i=0
+	s=[]
+	while i<len(str1):
+		s=str1[1:]+str1[0:1]
+		str1=s
+		i+=1
+		if str1==str2:
+			return True
+	else:
+		return False
+print(isrotated("12345", "54321"))
