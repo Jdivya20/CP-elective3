@@ -8,5 +8,37 @@
 
 
 def fun_interleave(s1,s2):
-	return ""
+	a=[]
+	b=[]
+	s=[]
+	for i in s1:
+		a.append(i)
+	for j in s2:
+		b.append(j)
+	x=0
+	if len(s1)==len(s2):
+		while x<len(s2):
+			s+=a[0:1]+b[0:1]
+			a.pop(0)
+			b.pop(0)
+			x+=1
+		return (''.join(s))
+	elif len(s1)<len(s2):
+		while x<len(s1):
+			s+=a[0:1]+b[0:1]
+			a.pop(0)
+			b.pop(0)
+			x+=1
+		s+=b[::]
+		return (''.join(s))
+	elif len(s2)<len(s1):
+		while x<len(s2):
+			s+=a[0:1]+b[0:1]
+			a.pop(0)
+			b.pop(0)
+			x+=1
+		s+=a[::]
+		return (''.join(s))
+print(fun_interleave('pto', 'yhn'))
+print(fun_interleave('a#', 'cD!f2'))
 	
