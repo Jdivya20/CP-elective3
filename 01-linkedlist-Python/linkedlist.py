@@ -36,7 +36,7 @@ class LinkedList(object):
         current = self.head
         if position < 1:
                 return None
-        while current and count <= position:
+        while count <= position:
             if count == position:
                 return current
             current = current.next
@@ -55,7 +55,7 @@ class LinkedList(object):
             new_element.next=current
             current=new_element
         else:
-            while current and position>count:
+            while position>count:
                 if count==position-1:
                     new_element.next=current.next
                     current.next=new_element
@@ -74,3 +74,14 @@ class LinkedList(object):
                 previous.next = current.next
             else:
                 self.head = current.next
+e1 = Element(1)
+e2 = Element(2)
+e3 = Element(3)
+
+ll = LinkedList(e1)
+ll.append(e2)
+ll.append(e3)
+ll.get_position(3)
+e4 = Element(4)
+ll.insert(e4,3)
+ll.delete(2)
