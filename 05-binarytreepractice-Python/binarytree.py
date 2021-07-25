@@ -19,7 +19,11 @@ class BinaryTree(object):
         """
         Print out all tree nodes as they are visited in a pre-order traversal."""
         # Your code goes here
-        pass
+        if self.left:
+            self.left.PrintTree()
+        print( self.data)
+        if self.right:
+            self.right.PrintTree()
 
     def preorder_search(self, start, find_val):
         """
@@ -34,3 +38,11 @@ class BinaryTree(object):
         """
         # Your code goes here
         pass
+tree = BinaryTree(1)
+tree.search(4)
+tree.root.left = Node(2)
+tree.root.right = Node(3)
+tree.root.left.left = Node(4)
+tree.root.left.right = Node(5)
+tree.search(4)
+tree.search(6)
