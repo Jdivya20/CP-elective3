@@ -5,4 +5,12 @@
 
 def median(a):
 	# your code goes here
-	pass
+	if len(a)==0:
+		return None
+	elif len(a)%2!=0:
+		median=len(a)//2
+		return a[median]
+	else:
+		median=len(a)//2
+		return (a[median]+a[median-1])/2
+print(median([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
