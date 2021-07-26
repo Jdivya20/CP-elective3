@@ -13,7 +13,21 @@ class BinaryTree(object):
         Return True if the find_val is in the tree and False otherwise.
         """
         # Your code goes here
-        pass
+        # if find_val < self.value:
+        #     if self.left is None:
+        #         return True
+        #     return self.left.search(find_val)
+        # elif find_val > self.value:
+        #     if self.right is None:
+        #         return True
+        #     return self.right.search(find_val)
+        # else:
+        #     return self.value
+        # pass
+        if find_val==self.value:
+            return True
+        else:
+            return self.root.left.search(find_val)
 
     def print_tree(self):
         """
@@ -21,7 +35,7 @@ class BinaryTree(object):
         # Your code goes here
         if self.left:
             self.left.PrintTree()
-        print( self.data)
+        print( self.value)
         if self.right:
             self.right.PrintTree()
 
