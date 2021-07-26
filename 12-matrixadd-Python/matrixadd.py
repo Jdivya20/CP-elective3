@@ -17,4 +17,24 @@
 
 def matrixadd(L, M):
 	# Your code goes here
-	pass
+	row=len(L)
+	col=len(L[0])
+	result=[]
+	for y in range(row):
+		result+=[[0]*col]
+	if len(L)!=len(M) or len(L[0])!=len(M[0]):
+		return None
+	x=0
+	while x<len(M)-1:
+		if len(M[x])!=len(M[x+1]):
+			return None
+		x+=1
+	for i in range(row):
+		for j in range(col):
+			result[i][j]=L[i][j]+M[i][j]
+	return result
+print(matrixadd([[1,2,3],
+    [4 ,5,6],
+    [7 ,8,9]], [[9,8,7],
+    [6,5,4],
+    [3,2,1]]))
