@@ -44,7 +44,7 @@ class BinaryTree(object):
         else:
             return self.preorder_search(start.left, find_val) or self.preorder_search(start.right, find_val)
 
-    def preorder_print(self, start, traversal):
+    def preorder_print(self, start):
         """
         Helper method - use this to create a recursive print solution.
         """
@@ -62,3 +62,4 @@ tree.root.left.left = Node(4)
 tree.root.left.right = Node(5)
 tree.search(4)
 tree.search(6)
+tree.print_tree()
