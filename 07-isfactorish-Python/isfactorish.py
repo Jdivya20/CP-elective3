@@ -12,5 +12,24 @@
 
 
 def fun_isfactorish(n):
-	return False
+	count=0
+	x=[]
+	a=abs(n)
+	n=abs(n)
+	for i in str(n):
+		if i not in x:
+			x.append(i)
+	if len(str(n))==3 and len(x)==3:
+		while n>0:
+			r=n%10
+			if r==0:
+				return False
+			n=n//10
+			if a%r==0:
+				count+=1
+	if count==3:
+		return True
+	else:
+		return False
+print(fun_isfactorish(112))
 
