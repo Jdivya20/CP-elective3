@@ -45,3 +45,4 @@ def nth_happy_number(n):
 			count+=1
 		
 	return num
+print(nth_happy_number(11))
