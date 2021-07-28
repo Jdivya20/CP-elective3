@@ -22,4 +22,8 @@
 
 def inverselookandsay(a):
 	# Your code goes here
-	pass
+	lis=[]
+	for x in a:
+		for y in range(len(x)-1):
+			lis += x[y] * [x[y+1]]
+	return lis
