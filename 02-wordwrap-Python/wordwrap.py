@@ -17,7 +17,18 @@
 
 
 def fun_wordwrap(s, n):
-	return ""
+	b=""
+	s=s.strip()
+	while len(s)>0:
+		a=s[0:n]
+		s=s[n::]
+		b=b+a+'\n'
+		b=b.replace(" ","-")
+	if b[-1]=="\n":
+		return b[0:-1]
+	else:
+		return b
+print(fun_wordwrap(" a b c de fgh ",  4))
 
 
  
