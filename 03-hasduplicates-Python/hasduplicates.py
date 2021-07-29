@@ -5,4 +5,12 @@
 
 def hasduplicates(L):
 	# Your code goes here
-	pass
+	a=[]
+	for i in L:
+		for j in i:
+			if j in a:
+				return True
+			if j not in a:
+				a.append(j)
+	return False
+print(hasduplicates([[2, 7, 9], [9, 5, 1], [4, 3, 8]]))
