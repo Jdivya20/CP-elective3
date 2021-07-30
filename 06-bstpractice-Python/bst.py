@@ -31,8 +31,14 @@ class BST(object):
 
     def printSelf(self):
         # Your code goes here
-        print(self.root)
-
+        print(self.root.value)
+    #     self.preorder(self.root)
+    # def preorder(self,start):
+    #     if start is None:
+    #         return
+    #     print(start.value)
+    #     self.preorder(start.left)
+    #     self.preorder(start.right)
         
     def search(self, find_val):
         # Your code goes here
@@ -48,7 +54,8 @@ class BST(object):
 tree = BST(4)
 
 # print(tree.search(5))
-print(tree.insert(2))
+tree.insert(2)
 tree.insert(1)
 tree.insert(3)
 tree.insert(5)
+print(tree.printSelf())
