@@ -34,4 +34,4 @@ def recursion_binarysearchvalues(L, v):
 	b=len(L)
 	second=b-1
 	return binary(L,v,first,second,a)
-	print(recursion_binarysearchvalues(['a', 'c', 'f', 'g', 'm', 'q'], 'g'))
+print(recursion_binarysearchvalues(['a', 'c', 'f', 'g', 'm', 'q'], 'g'))
