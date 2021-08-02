@@ -7,4 +7,10 @@
 
 def samechars(s1, s2):
 	# Your code goes here
-	pass
+    s1=str(s1)
+    s2=str(s2)
+    for i in s2:
+        if i not in s1:
+            return False
+    return True
+print(samechars(42, "cBa"))
