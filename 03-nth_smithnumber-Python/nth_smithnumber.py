@@ -32,7 +32,7 @@ def smithnumber(n):
         b.append(int(x))
     for k in a:
         o.append(int(k))
-    if sum(o)==sum(b) and len(a)>1 and int(a)!=int(l):
+    if sum(o)==sum(b) and int(a)!=int(l):
         return True
     else:
         return False
