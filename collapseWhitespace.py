@@ -16,9 +16,10 @@
 
 def cw(s):
     # Your code goes here...
-    return ""
+    return ' '.join(s.split())
+print(cw("a\nb"))
 
 assert(cw("a\nb") == "a b")
 assert(cw("a\n   \t    b") == "a b")
-assert(cw("a\n   \t    b  \n\n  \t\t\t c   ") == "a b c ")
+assert(cw("a\n   \t    b  \n\n  \t\t\t c   ") == "a b c")
 print ("All test cases passed...")
