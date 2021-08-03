@@ -21,4 +21,24 @@ the function should return as follows
 
 def movie_awards(oscarResults):
     # Your code goes here...
-    pass
+    n=oscarResults
+    n=list(n)
+    a=[]
+    d={}
+    # for i in n:
+    #     a.append(i[1])
+    for x in n:
+        if x[1] in d:
+            d[x[1]]+=1
+        else:
+            d[x[1]]=1
+    return d
+print(movie_awards({ 
+    ("Best Picture", "The Shape of Water"), 
+    ("Best Actor", "Darkest Hour"),
+    ("Best Actress", "Three Billboards Outside Ebbing, Missouri"),
+    ("Best Director", "The Shape of Water"),
+    ("Best Supporting Actor", "Three Billboards Outside Ebbing, Missouri"),
+    ("Best Supporting Actress", "I, Tonya"),
+    ("Best Original Score", "The Shape of Water")
+}))
