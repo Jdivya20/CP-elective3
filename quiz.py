@@ -6,7 +6,31 @@
 
 def bestQuiz(l):
     # Your  code goes ehre...
-    pass
+    a=[]
+    rows = len(l)
+    cols = len(l[0])
+    for i in range(cols):  
+        sumCol = 0 
+        for j in range(rows):
+            if l[j][i]==-1:
+                sumCol = sumCol + 0
+                avg=sumCol
+            else:
+                sumCol = sumCol + l[j][i]
+                avg=sumCol//2
+        a.append(avg)
+    s=0
+    for k in range(len(a)):
+        if a[k]>s:
+            s=a[k]
+    if s==0:
+        return None
+    else:
+        return a.index(s)
+print(bestQuiz([ [ 88,  80, 91 ],
+              [ 68, 100, -1 ]]))
+
+# print(bestQuiz([ [ 88,  -1, -1 ],[ 68, -1, -1 ]]))
 
 def testBestQuiz():
     print('Testing bestQuiz()...', end='')
@@ -23,3 +47,4 @@ def testBestQuiz():
           [-1, -1, -1 ]]
     assert(bestQuiz(a) == None)
     print('All test cases passed...!')
+# print(testBestQuiz())
