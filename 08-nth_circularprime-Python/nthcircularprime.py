@@ -13,22 +13,27 @@ def isprime(n):
             return True
     else:
         return False
-def circularprime(n):
-    a=str(n)
-    a=a[::-1]
-    a=int(a)
-    if isprime(n) and isprime(a):
-        return True
+def circular(n):
+    a=[]
+    c=str(n)
+    i=0
+    while i<len(c):
+        c=c[1:]+c[0:1]
+        x=int(c)
+        a.append(x)
+        i+=1
+    for i in a:
+        if isprime(i)== False:
+            return False
     else:
-        return False
-print(circularprime(27))
+        return True
 def nthcircularprime(n):
 	# Your code goes here
 	count=0
 	num=0
 	while count<n:
 		num+=1
-		if circularprime(num):
+		if isprime(num) and circular(num):
 			count+=1
 	return num
 print(nthcircularprime(0))
