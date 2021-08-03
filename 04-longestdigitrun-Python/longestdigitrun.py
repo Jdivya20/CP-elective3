@@ -7,24 +7,42 @@
 def longestdigitrun(n):
 	# Your code goes here
 	n=abs(n)
-	next_num=1
-	flag=1
-	temp=0
-	count=0
-	while(n>0):
-		first=n%10
-		if(first!=next_num):
+	a=[]
+	l=[]
+	m=[]
+	e=[]   
+	b=[]
+	count=1
+	v=0
+	for i in str(n):
+		a.append(int(i))
+	for x in range(len(a)-1):
+		if a[x]!=a[x+1] and x<=len(a)-1:
+			l.append((a[x],count))
 			count=1
-		n=n//10
-		if(next_num == first):
+		else:
 			count+=1
-			# return True
-		next_num=first
-		if(count>temp):
-			temp=count
-			flag=next_num
-		if(temp==count):
-			if(flag>next_num):
-				flag=next_num
-	return flag
-print(longestdigitrun(-677886))
+	print(x+1)
+	print(len(a)-1)
+	if x+1==len(a)-1:
+		if a[x]==a[x+1]:
+			l.append((a[x],count))
+		elif a[x]!=a[x+1]:
+			l.append((a[x+1],count))
+	for o in l:
+		m.append(o[1])
+	z=0
+	for s in m:
+		if s>=z:
+			z=s
+	b.append(z)
+	for p in l:
+		for w in b:
+			if p[1]==w:
+				e.append(p[0])
+	if len(e)==1:
+		return max(e)
+	else:
+		return min(e)
+
+print(longestdigitrun(123330001))
