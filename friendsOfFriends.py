@@ -23,7 +23,31 @@ Thus, in this example, friendsOfFriends should return:
  'ramsay': set()
 }
 '''
-
+d={}
+d["jon"] = set(["arya", "tyrion"])
+d["tyrion"] = set(["jon", "jaime", "pod"])
+d["arya"] = set(["jon"])
+d["jaime"] = set(["tyrion", "brienne"])
+d["brienne"] = set(["jaime", "pod"])
+d["pod"] = set(["tyrion", "brienne", "jaime"])
+d["ramsay"] = set()
 def friendsOfFriends(d):
     # Your code goes here...
-    return None
+    p={}
+    for key,values in d.items():
+        if values==set():
+            p[key]=set()
+        for i in values:
+            # print(d[i])
+            for j in d[i]:
+                # print(d[j])
+                if j==key or j in values:
+                    if len(d[i])==1:
+                        p[key]=set()
+                    else:
+                        continue
+                else:
+                    p.setdefault(key,set())
+                    p[key].add(j)
+    return p
+print(friendsOfFriends(d))
