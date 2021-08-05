@@ -4,9 +4,19 @@
 # contains k number of subsets from the power set as sets. 
 # (The values in the set will range from 1 to n).
 # Example:
-# 	limitedPowerSet(5, 7) => 
-# [ {}, {1}, {2}, {3}, {4}, {5}, {1, 2} ]
-
+# 	nth
+import itertools
 def limitedPowerSet(n, k):
     # Your code goes here...
-    pass
+    s=set(())
+    a=[{}]
+    for i in range(1,n+1):
+        s.add(i)
+    for i in range(1,len(s)+1):
+        p=list(map(set,itertools.combinations(s,i)))
+        for j in range(len(p)):
+            if len(a)!=k:
+                a.append(p[j])
+            else:
+                return a
+print(limitedPowerSet(5, 7))
