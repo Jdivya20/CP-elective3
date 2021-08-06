@@ -29,6 +29,6 @@ def mostfrequentdigit(n):
 			if values==s:
 				e.append(key)
 				f.append(values)
-		if len(d)==len(e) or min(f)==max(f) and max(c)==max(f):
+		if len(e)!=0 and min(f)==max(f) and max(c)==max(f):
 			return(min(e))
 		return(max(d,key=d.get))
