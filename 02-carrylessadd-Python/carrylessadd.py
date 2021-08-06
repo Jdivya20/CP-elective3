@@ -16,14 +16,17 @@ def fun_carrylessadd(x, y):
 	else:
 		s=''
 		# for i in range(len(x)-1):
-		while x>10 and y>10:
+		while x>=10 and y>=10:
 			
 			r1=x%10
 			r2=y%10
 			s1=r1+r2
-			s+=str(s1-10)
-			x=x//10
-			y=y//10
+			if s1<10:
+				return s1
+			else:
+				s+=str(s1-10)
+				x=x//10
+				y=y//10
 	s=s[::-1]
 	return int(s)
 print(fun_carrylessadd(121, 0))
