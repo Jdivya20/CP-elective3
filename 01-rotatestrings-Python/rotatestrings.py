@@ -7,10 +7,12 @@
 
 
 def fun_rotatestrings(s, n):
-	if n>len(s):
-		n=n-len(s)
-	if n<-abs(len(s)):
-		n=abs(n)+(-abs(len(s)))
-	s=s[n:]+s[0:n]
-	return s
-print(fun_rotatestrings("abcd", -6))
+    a=len(s)
+    if n>a:
+        # n=n-len(s)
+        n=n%a
+    if n<len(s):
+        n=a+n
+    s=s[n:]+s[0:n]
+    return s
+print(fun_rotatestrings("abcd", -1))
